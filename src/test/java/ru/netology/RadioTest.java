@@ -119,7 +119,15 @@ class RadioTest {
         int expected = 10;
         assertEquals(expected, actual);
     }
-
+    @Test
+    void shouldIncreaseVolumeDordenMax() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(10);
+        radio.increaseVolume();
+        int actual = radio.getCurrentVolume();
+        int expected = 10;
+        assertEquals(expected, actual);
+    }
     // тест на уменьшение громкости
     @Test
     void shouldDecreaseVolume() {

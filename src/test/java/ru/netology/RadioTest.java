@@ -115,7 +115,7 @@ class RadioTest {
         radio.setCurrentVolume(11);
         radio.increaseVolume();
         int actual = radio.getCurrentVolume();
-        int expected = 10;
+        int expected = 1;
         assertEquals(expected, actual);
     }
 

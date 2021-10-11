@@ -40,7 +40,7 @@ public class Radio {
         if (currentStation > getMinStation()) {
             currentStation = currentStation - 1;
         }
-        if (currentStation <= getMinStation()){
+        if (currentStation <= getMinStation()) {
             currentStation = 9;
         }
 
@@ -56,6 +56,7 @@ public class Radio {
             return;
         }
         if (newCurrentVolume > getMaxVolume()) {
+            return;
         }
         currentVolume = newCurrentVolume;
     }
@@ -72,7 +73,7 @@ public class Radio {
         if (currentVolume < getMaxVolume()) {
             currentVolume = currentVolume + 1;
         }
-        if (currentVolume >= getMaxVolume()){
+        if (currentVolume >= getMaxVolume()) {
             currentVolume = 10;
         }
     }
@@ -81,7 +82,7 @@ public class Radio {
         if (currentVolume > getMinVolume()) {
             currentVolume = currentVolume - 1;
         }
-        if (currentVolume <= getMinVolume()){
+        if (currentVolume <= getMinVolume()) {
             currentVolume = 0;
         }
     }

@@ -10,7 +10,7 @@ public class Radio {
 
     public void setCurrentStation(int newCurrentStation) {
 
-        if (newCurrentStation < 0) {
+        if (newCurrentStation < getMinStation()) {
             return;
         }
         if (newCurrentStation > getMaxStation()) {
@@ -23,31 +23,29 @@ public class Radio {
         return 9;
     }
 
+    public int getMinStation() {
+        return 0;
+    }
+
     public void switchingNewStationNext() {
         if (currentStation < getMaxStation()) {
             currentStation = currentStation + 1;
         }
-    }
-
-    public void switchingNewStationPrev() {
-        if (currentStation > 0) {
-            currentStation = currentStation - 1;
-        }
-
-    }
-
-    public void switchingNewStationNextMoreMax() {
-        if (currentStation >= 9) {
+        if (currentStation >= getMaxStation()) {
             currentStation = 0;
         }
     }
 
-    public void switchingNewStationPrevSmallerMin() {
-        if (currentStation <= 0) {
+    public void switchingNewStationPrev() {
+        if (currentStation > getMinStation()) {
+            currentStation = currentStation - 1;
+        }
+        if (currentStation <= getMinStation()){
             currentStation = 9;
         }
 
     }
+
 
     public int getCurrentVolume() {
         return currentVolume;
@@ -74,23 +72,18 @@ public class Radio {
         if (currentVolume < getMaxVolume()) {
             currentVolume = currentVolume + 1;
         }
-    }
-
-    public void increaseVolumeMoreMax() {
-        if (currentVolume >= 10) {
-            setCurrentVolume(10);
+        if (currentVolume >= getMaxVolume()){
+            currentVolume = 10;
         }
     }
 
     public void decreaseVolume() {
-        if (currentVolume > 0) {
+        if (currentVolume > getMinVolume()) {
             currentVolume = currentVolume - 1;
+        }
+        if (currentVolume <= getMinVolume()){
+            currentVolume = 0;
         }
     }
 
-    public void decreaseVolumeLessMin() {
-        if (currentVolume <= 0) {
-            setCurrentVolume(0);
-        }
-    }
 }

@@ -71,7 +71,7 @@ class RadioTest {
     void shouldSwitchingNewStationNextMoreMax() {
         Radio radio = new Radio();
         radio.setCurrentStation(9);
-        radio.switchingNewStationNextMoreMax();
+        radio.switchingNewStationNext();
         int actual = radio.getCurrentStation();
         int expected = 0;
         assertEquals(expected, actual);
@@ -92,7 +92,7 @@ class RadioTest {
     void shouldSwitchingNewStationPrevSmallerMin() {
         Radio radio = new Radio();
         radio.setCurrentStation(0);
-        radio.switchingNewStationPrevSmallerMin();
+        radio.switchingNewStationPrev();
         int actual = radio.getCurrentStation();
         int expected = 9;
         assertEquals(expected, actual);
@@ -113,7 +113,7 @@ class RadioTest {
     void shouldIncreaseVolumeMoreMax() {
         Radio radio = new Radio();
         radio.setCurrentVolume(11);
-        radio.increaseVolumeMoreMax();
+        radio.increaseVolume();
         int actual = radio.getCurrentVolume();
         int expected = 10;
         assertEquals(expected, actual);
@@ -144,7 +144,7 @@ class RadioTest {
     void shouldDecreaseVolumeLessMin() {
         Radio radio = new Radio();
         radio.setCurrentVolume(-1);
-        radio.decreaseVolumeLessMin();
+        radio.decreaseVolume();
         int actual = radio.getCurrentVolume();
         int expected = 0;
         assertEquals(expected, actual);
@@ -154,7 +154,7 @@ class RadioTest {
     void shouldDecreaseVolumeDordenMin() {
         Radio radio = new Radio();
         radio.setCurrentVolume(0);
-        radio.decreaseVolumeLessMin();
+        radio.decreaseVolume();
         int actual = radio.getCurrentVolume();
         int expected = 0;
         assertEquals(expected, actual);

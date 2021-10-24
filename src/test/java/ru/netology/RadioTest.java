@@ -9,7 +9,7 @@ public class RadioTest {
     //тесты на переключение станции выбором любой станции
     @Test
     public void shouldSwitchingNewStationNumberOfStations() {
-        Radio radio = new Radio(12);
+        Radio radio = new Radio(12, 11);
         radio.setCurrentStation(6);
         int actual = radio.getCurrentStation();
         int expected = 6;
@@ -33,7 +33,7 @@ public class RadioTest {
     }
     @Test
     public void shouldSwitchingNewStationMoreMaxNumberOfStations() {
-        Radio radio = new Radio(7);
+        Radio radio = new Radio(7,6);
         radio.setCurrentStation(9);
         int actual = radio.getCurrentStation();
         int expected = 0;
@@ -50,10 +50,10 @@ public class RadioTest {
 
     @Test
     public void shouldSwitchingNewStationDordenMaxNumberOfStations() {
-        Radio radio = new Radio(20);
+        Radio radio = new Radio(20, 19);
         radio.setCurrentStation(20);
         int actual = radio.getCurrentStation();
-        int expected = 20;
+        int expected = 0;
         assertEquals(expected, actual);
     }
     @Test
@@ -85,7 +85,7 @@ public class RadioTest {
     }
     @Test
     public void shouldSwitchingNewStationNextBorderMinNumberOfStation() {
-        Radio radio = new Radio(15);
+        Radio radio = new Radio(15,14);
         radio.setCurrentStation(0);
         radio.switchingNewStationNext();
         int actual = radio.getCurrentStation();
@@ -105,7 +105,7 @@ public class RadioTest {
     @Test
     public void shouldSwitchingNewStationNextMoreMax() {
         Radio radio = new Radio();
-        radio.setCurrentStation(10);
+        radio.setCurrentStation(9);
         radio.switchingNewStationNext();
         int actual = radio.getCurrentStation();
         int expected = 0;
@@ -113,8 +113,8 @@ public class RadioTest {
     }
     @Test
     public void shouldSwitchingNewStationNextMoreMaxNumberOfStation() {
-        Radio radio = new Radio(18);
-        radio.setCurrentStation(18);
+        Radio radio = new Radio(18,17);
+        radio.setCurrentStation(17);
         radio.switchingNewStationNext();
         int actual = radio.getCurrentStation();
         int expected = 0;
@@ -147,16 +147,16 @@ public class RadioTest {
         radio.setCurrentStation(0);
         radio.switchingNewStationPrev();
         int actual = radio.getCurrentStation();
-        int expected = 10;
+        int expected = 9;
         assertEquals(expected, actual);
     }
     @Test
     public void shouldSwitchingNewStationPrevSmallerMinNumberOfStations() {
-        Radio radio = new Radio(23);
+        Radio radio = new Radio(23,22);
         radio.setCurrentStation(0);
         radio.switchingNewStationPrev();
         int actual = radio.getCurrentStation();
-        int expected = 23;
+        int expected = 22;
         assertEquals(expected, actual);
     }
 
@@ -166,7 +166,7 @@ public class RadioTest {
         radio.setCurrentStation(-3);
         radio.switchingNewStationPrev();
         int actual = radio.getCurrentStation();
-        int expected = 10;
+        int expected = 0;
         assertEquals(expected, actual);
     }
 

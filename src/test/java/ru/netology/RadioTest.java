@@ -9,12 +9,13 @@ public class RadioTest {
     //тесты на переключение станции выбором любой станции
     @Test
     public void shouldSwitchingNewStationNumberOfStations() {
-        Radio radio = new Radio(12, 11);
+        Radio radio = new Radio(12);
         radio.setCurrentStation(6);
         int actual = radio.getCurrentStation();
         int expected = 6;
         assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchingNewStation() {
         Radio radio = new Radio();
@@ -23,6 +24,7 @@ public class RadioTest {
         int expected = 5;
         assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchingNewStationMoreMax() {
         Radio radio = new Radio();
@@ -31,14 +33,16 @@ public class RadioTest {
         int expected = 0;
         assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchingNewStationMoreMaxNumberOfStations() {
-        Radio radio = new Radio(7,6);
+        Radio radio = new Radio(7);
         radio.setCurrentStation(9);
         int actual = radio.getCurrentStation();
         int expected = 0;
         assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchingNewStationSmallerMin() {
         Radio radio = new Radio();
@@ -50,12 +54,13 @@ public class RadioTest {
 
     @Test
     public void shouldSwitchingNewStationDordenMaxNumberOfStations() {
-        Radio radio = new Radio(20, 19);
+        Radio radio = new Radio(20);
         radio.setCurrentStation(20);
         int actual = radio.getCurrentStation();
         int expected = 0;
         assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchingNewStationDordenMax() {
         Radio radio = new Radio();
@@ -64,6 +69,7 @@ public class RadioTest {
         int expected = 9;
         assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchingNewStationDordenMin() {
         Radio radio = new Radio();
@@ -83,15 +89,17 @@ public class RadioTest {
         int expected = 1;
         assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchingNewStationNextBorderMinNumberOfStation() {
-        Radio radio = new Radio(15,14);
+        Radio radio = new Radio(15);
         radio.setCurrentStation(0);
         radio.switchingNewStationNext();
         int actual = radio.getCurrentStation();
         int expected = 1;
         assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchingNewStationNextNegativ() {
         Radio radio = new Radio();
@@ -111,15 +119,17 @@ public class RadioTest {
         int expected = 0;
         assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchingNewStationNextMoreMaxNumberOfStation() {
-        Radio radio = new Radio(18,17);
+        Radio radio = new Radio(18);
         radio.setCurrentStation(17);
         radio.switchingNewStationNext();
         int actual = radio.getCurrentStation();
         int expected = 0;
         assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchingNewStationNextBorderMax() {
         Radio radio = new Radio();
@@ -150,9 +160,10 @@ public class RadioTest {
         int expected = 9;
         assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchingNewStationPrevSmallerMinNumberOfStations() {
-        Radio radio = new Radio(23,22);
+        Radio radio = new Radio(23);
         radio.setCurrentStation(0);
         radio.switchingNewStationPrev();
         int actual = radio.getCurrentStation();
